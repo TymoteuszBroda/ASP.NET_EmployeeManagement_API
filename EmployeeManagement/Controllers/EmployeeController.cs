@@ -45,6 +45,13 @@ namespace EmployeeManagement.Controllers
             return NoContent();
         }
 
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Employee>> UpdateEmployee(int id, Employee employee)
+        {
+            await _employeeRepository.UpdateEmployeeAsync(employee);
+            return NoContent();
+        }
+
 
     }
 }
